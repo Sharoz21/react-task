@@ -1,3 +1,5 @@
 export default interface Filters {
-  gender: "male" | "female";
+  gender: "male" | "female" | "both";
+  searchQuery?: string;
+  pageNumber: number;
 }
