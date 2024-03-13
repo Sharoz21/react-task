@@ -1,16 +1,15 @@
-import { HTMLAttributes } from "react";
 import Map, { GeolocateControl, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { Box } from "@mui/material";
+import { Box, BoxProps } from "@mui/material";
 import { MAPBOX_ACCESS_TOKEN } from "../../constants";
 
-interface IUserLocationMap extends HTMLAttributes<HTMLDivElement> {
+interface IUserLocationMap extends BoxProps {
   location: { longitude: number; latitude: number };
 }
 
-function UserLocationMap({ location }: IUserLocationMap) {
+function UserLocationMap({ location, ...rest }: IUserLocationMap) {
   return (
-    <Box>
+    <Box {...rest}>
       <Map
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
         initialViewState={{
