@@ -1,7 +1,7 @@
 import RadioGroup, { RadioGroupProps } from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
 
-function RadioButtons({ onChange, value, children }: RadioGroupProps) {
+function RadioButtons({ onChange, value, children, ...rest }: RadioGroupProps) {
   return (
     <FormControl>
       <RadioGroup
@@ -9,6 +9,7 @@ function RadioButtons({ onChange, value, children }: RadioGroupProps) {
         name="radio-buttons-group"
         row
         onChange={onChange}
+        {...rest}
       >
         {children}
       </RadioGroup>

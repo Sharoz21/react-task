@@ -5,7 +5,7 @@ interface IUserDetailsCard extends PaperProps {
   user: Result;
 }
 
-function UserDetailsCard({ user }: IUserDetailsCard) {
+function UserDetailsCard({ user, ...rest }: IUserDetailsCard) {
   return (
     <Paper
       sx={{
@@ -14,6 +14,7 @@ function UserDetailsCard({ user }: IUserDetailsCard) {
         gap: 2,
         p: 7,
       }}
+      {...rest}
     >
       <Typography>Username: {user?.login?.username}</Typography>
       <Typography>Email: {user?.email}</Typography>

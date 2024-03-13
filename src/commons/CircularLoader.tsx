@@ -1,13 +1,12 @@
-import { CircularProgress, SxProps } from "@mui/material";
+import { CircularProgress, CircularProgressProps } from "@mui/material";
 
-interface ICircularLoader {
+interface ICircularLoader extends CircularProgressProps {
   isLoading: Boolean;
   children: React.ReactNode;
-  sx?: SxProps;
 }
 
-function CircularLoader({ children, isLoading, sx }: ICircularLoader) {
-  return isLoading ? <CircularProgress sx={sx} /> : children;
+function CircularLoader({ children, isLoading, ...rest }: ICircularLoader) {
+  return isLoading ? <CircularProgress {...rest} /> : children;
 }
 
 export default CircularLoader;

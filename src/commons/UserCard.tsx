@@ -12,9 +12,9 @@ interface IUserCard extends CardProps {
   user: Result;
 }
 
-function UserCard({ user, sx, children }: IUserCard) {
+function UserCard({ user, sx, children, ...rest }: IUserCard) {
   return (
-    <Card sx={sx}>
+    <Card sx={sx} {...rest}>
       {children}
       <Box marginLeft={1}>
         <Typography variant="h5" fontSize={24}>
